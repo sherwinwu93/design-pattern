@@ -1,0 +1,11 @@
+@startuml
+class LazySingleton {
+- LazySingleton instance = null
+- LazySingleton()
++ LazySingleton getInstance()
+}
+LazySingleton o--> LazySingleton : instance
+LazySingleton ..> LazySingleton : creates
+note "if(instance == null) instance = new LazySingleton();\n return instance" as N1
+LazySingleton ..N1
+@enduml

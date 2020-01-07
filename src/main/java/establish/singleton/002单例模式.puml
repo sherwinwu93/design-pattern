@@ -1,0 +1,11 @@
+@startuml
+class LoadBalancer {
+- LoadBalancer instance = null
+- List : serverList = null
+- LoadBalancer()
++ LoadBalancer getLoadBalancer()
++ void addServer(String server)
++ void removeServer(String server)
++ String getServer()
+}
+@enduml

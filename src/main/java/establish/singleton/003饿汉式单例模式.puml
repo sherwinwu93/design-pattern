@@ -1,0 +1,9 @@
+@startuml
+class EagerSingleton {
+- static EagerSingleton instance = new EagerSingleton()
+- EagerSingleton()
++ EagerSingleton getInstance()
+}
+EagerSingleton ..> EagerSingleton : getInstance<<create>>
+EagerSingleton o--> EagerSingleton : instance
+@enduml
