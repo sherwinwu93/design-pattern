@@ -6,7 +6,7 @@ package password;
  */
 public class PasswordUtils {
     public static void main(String[] args) {
-        System.out.println(prefix("stackoverflow"));
+        System.out.println(prefix(args[0]));
     }
 
     public static String prefix(String website) {
