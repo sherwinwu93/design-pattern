@@ -6,7 +6,7 @@ package password;
  */
 public class PasswordUtils {
     public static void main(String[] args) {
-        System.out.println(prefix("https://github.com/"));
+        System.out.println(prefix("stackoverflow"));
     }
 
     public static String prefix(String website) {
@@ -19,6 +19,7 @@ public class PasswordUtils {
             }
             prefix += chInt;
         }
+        prefix = String.format("%07d", Integer.valueOf(prefix));
         return prefix;
     }
 }
