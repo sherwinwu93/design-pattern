@@ -1,12 +1,16 @@
 package password;
 
+import java.util.Scanner;
+
 /**
  * @author wusd
  * @date 2020/1/10 11:01
  */
 public class PasswordUtils {
     public static void main(String[] args) {
-        System.out.println(prefix(args[0]));
+        Scanner scan = new Scanner(System.in);
+        String next = scan.next();
+        System.out.println(prefix(next));
     }
 
     public static String prefix(String website) {
