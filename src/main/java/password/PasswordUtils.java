@@ -9,8 +9,10 @@ import java.util.Scanner;
 public class PasswordUtils {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String next = scan.next();
-        System.out.println(prefix(next));
+        while (true) {
+            String next = scan.next();
+            System.out.println(prefix(next));
+        }
     }
 
     public static String prefix(String website) {
