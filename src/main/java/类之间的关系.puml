@@ -1,0 +1,35 @@
+@startuml
+' 0 谁被使用,谁就被指
+' 1. 继承
+' 1.1 类继承
+InterfaceA11 <|-- InterfaceB11
+' 1.2 接口继承
+ClassA12 <|-- ClassB12
+' 2. 实现
+InterfaceA2 <|.. ClassB2
+' 3. 依赖: 类A的方法里使用到类B
+class ClassA3 {
+void methodB()
+}
+ClassA3 ..> ClassB3
+' 4. 关联: 类A的方法b使用到类B, 类B的方法a又使用类A
+class ClassA4 {
+void methodB()
+}
+class ClassB4 {
+void methodA()
+}
+ClassA4 <..> ClassB4
+' 5. 聚合: has-a: 个体离开整个仍然存在
+class Family {
+Child child
+}
+class Child {
+}
+Family o--> Child
+' 6. 组合: contains-a: 个体离开整体不存在
+class House {
+Room room
+}
+House *--> Room
+@enduml

@@ -1,0 +1,33 @@
+@startuml
+interface FlyBehavior {
+    fly()
+}
+
+class FlyWithWings {
+    fly(){//用翅膀飞}
+}
+FlyWithWings ..up|> FlyBehavior
+
+class FlyNoWay {
+    fly(){//什么都不做}
+}
+FlyNoWay ..up|> FlyBehavior
+
+interface QuackBehavior {
+    quack()
+}
+
+class Quack {
+    quack(){//呱呱叫}
+}
+Quack ..up|> QuackBehavior
+class Squeak {
+    quack(){//吱吱叫}
+}
+Squeak ..up|> QuackBehavior
+class MuteQuack {
+    quack(){//什么也不做}
+}
+MuteQuack ..up|> QuackBehavior
+
+@enduml

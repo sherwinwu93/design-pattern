@@ -1,0 +1,17 @@
+@startuml
+class Animal {
+makeSound()
+}
+
+class Dog {
+makeSound() {bark();}
+bark(){//汪汪}
+}
+Dog ..up|> Animal
+
+class Cat {
+makeSound() {meow();}
+meow(){//喵喵}
+}
+Cat ..up|> Animal
+@enduml

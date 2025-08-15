@@ -1,0 +1,44 @@
+@startuml
+class Duck {
+swim(){}
+display(){}
+(){}//鸭子的其他方法
+}
+interface Flyable {
+fly()
+}
+interface Quackable {
+quack()
+}
+
+class MallardDuck {
+display(){}
+fly(){]
+quack(){}
+}
+MallardDuck --up|> Duck
+MallardDuck ..up|> Quackable
+MallardDuck ..up|> Flyable
+
+class RedheadDuck {
+display(){}
+fly(){]
+quack(){}
+}
+RedheadDuck --up|> Duck
+RedheadDuck ..up|> Quackable
+RedheadDuck ..up|> Flyable
+
+class RubberDuck {
+display(){}
+quack(){}
+}
+RubberDuck --up|> Duck
+RubberDuck ..up|> Quackable
+
+class DecoyDuck {
+display(){}
+}
+DecoyDuck --up|> Duck
+
+@enduml

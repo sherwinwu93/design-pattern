@@ -1,0 +1,29 @@
+@startuml
+class Duck {
+quack(){}
+swim(){}
+display(){}
+fly(){}//新加方法
+(){}// 鸭子的其他方法
+}
+
+class MallardDuck {
+display(){//外观是绿头}
+}
+'note "外观是绿头" as N1
+'MallardDuck::display ..right N1
+MallardDuck --up|> Duck
+
+class RedheadDuck {
+void display(){//外观是红头}
+}
+'note "外观是红头" as N2
+'RedheadDuck::display ..right N2
+RedheadDuck--up|> Duck
+
+class RubberDuck {
+quack(){}覆盖成吱吱叫
+display(){}外观是橡皮鸭
+fly(){}覆盖成什么都不做
+}
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+interface Duck {
+quack()
+swim()
+display()
+()// 鸭子的其他方法
+}
+
+class MallardDuck {
+display(){//外观是绿头}
+}
+'note "外观是绿头" as N1
+'MallardDuck::display ..right N1
+MallardDuck --up|> Duck
+
+class RedheadDuck {
+void display(){//外观是红头}
+}
+'note "外观是红头" as N2
+'RedheadDuck::display ..right N2
+RedheadDuck--up|> Duck
+@enduml
