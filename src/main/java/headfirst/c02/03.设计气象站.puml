@@ -1,0 +1,55 @@
+@startuml
+interface Subject {
+registerObserver(observer);
+removeObserver(observer);
+notifyObservers();
+}
+Subject --down> Observer
+interface Observer {
+update();
+}
+interface DisplayElement {
+display();
+}
+
+class WeatherData {
+registerObserver(observer){}
+removeObserver(observer){}
+notifyObservers(){}
+
+getTemperature(){}
+getHumidity(){}
+getPressure(){}
+measurementsChanged(){}
+}
+WeatherData ..up|> Subject
+
+class CurrentConditionsDisplay {
+update(){}
+display(){//显示当前观测值}
+}
+CurrentConditionsDisplay ..up|> DisplayElement
+CurrentConditionsDisplay ..up|> Observer
+
+class StatisticsDisplay {
+update(){}
+display(){// 显示最小,最大,平均}
+}
+StatisticsDisplay ..up|> Observer
+StatisticsDisplay ..up|> DisplayElement
+
+class ThirdPartyDisplay {
+update(){}
+display(){// 显示基于观察值的其他内容}
+}
+ThirdPartyDisplay ..up|> Observer
+ThirdPartyDisplay ..up|> DisplayElement
+
+class ForecastDisplay {
+update(){}
+display(){//显示天气预报}
+}
+ForecastDisplay ..up|> Observer
+ForecastDisplay ..up|> DisplayElement
+
+@enduml

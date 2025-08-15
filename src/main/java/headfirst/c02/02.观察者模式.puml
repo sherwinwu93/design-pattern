@@ -1,0 +1,28 @@
+@startuml
+' 主题接口
+interface Subject {
+registerObserver(observer)
+removeObserver(observer)
+notifyObservers()
+}
+' 观察者接口
+interface Observer {
+update()
+}
+
+class ConcreteSubject {
+registerObserver(observer){}
+removeObserver(observer){}
+notifyObservers(){}
+
+getState(){}
+setState(state){notifyObservers();??}
+}
+ConcreteSubject ..up|> Subject
+
+class ConcreteObserver {
+update(){}
+}
+ConcreteObserver ..up|> Observer
+
+@enduml
