@@ -1,0 +1,8 @@
+@startuml
+class WeatherData {
+getTemperature(){}
+getHumidity(){}
+getPressure(){}
+measurementsChanged(){//一旦测量更新,方法会被调用}
+}
+@enduml
