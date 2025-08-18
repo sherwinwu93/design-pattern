@@ -1,0 +1,22 @@
+@startuml
+class PizzaStore {
+orderPizza()
+}
+class SimplePizzaFactory {
+createPizza()
+}
+PizzaStore --right> SimplePizzaFactory
+
+class Pizza {
+prepare()
+bake()
+cut()
+box()
+}
+SimplePizzaFactory --right> Pizza
+
+CheesePizza --up|> Pizza
+VeggiePizza --up|> Pizza
+ClamPizza --up|> Pizza
+PepperoniPizza --up|> Pizza
+@enduml

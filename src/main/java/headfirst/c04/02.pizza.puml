@@ -1,0 +1,12 @@
+@startuml
+class PizzaStore {
+createPizza()
+orderPizza() // 可以设置为final,避免子类修改
+}
+class NYStylePizzaStore {
+createPizza()
+}
+class ChicagoStylePizzaStore {
+createPizza()
+}
+@enduml
