@@ -1,0 +1,12 @@
+@startuml
+' InputStream(抽象组件)
+FileInputStream --up|> InputStream
+StringBufferInputStream --up|> InputStream
+ByteArrayInputStream --up|> InputStream
+FilterInputStream --up|> InputStream
+
+PushbackInputStream --up|> FilterInputStream
+BufferedInputStream --up|> FilterInputStream
+DataInputStream --up|> FilterInputStream
+LineNumberInputStream --up|> FilterInputStream
+@enduml

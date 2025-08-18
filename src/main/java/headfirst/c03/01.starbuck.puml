@@ -1,0 +1,33 @@
+@startuml
+' 饮料
+abstract class Beverage {
+description
+getDescription()
+abstract cost()
+}
+
+class HouseBlend {
+cost()
+}
+HouseBlend --up|> Beverage
+
+class DarkRoast {
+cost()
+}
+DarkRoast --up|> Beverage
+
+class Decaf {
+cost()
+}
+Decaf --up|> Beverage
+
+class Espresso {
+cost()
+}
+Espresso --up|> Beverage
+
+class HouseBlendWithSteamedMilkAndMocha {
+cost()
+}
+'....有几十个,简直是类爆炸
+@enduml

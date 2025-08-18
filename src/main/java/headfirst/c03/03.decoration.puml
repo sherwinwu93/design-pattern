@@ -1,0 +1,36 @@
+@startuml
+class Component {
+methodA()
+methodB()
+}
+
+class ConcreteComponent {
+methodA()
+methodB()
+}
+ConcreteComponent --up|> Component
+
+class Decorator {
+methodA()
+methodB()
+}
+Decorator --up|> Component
+' 每个装饰者都有一个Component变量
+Decorator --up> Component
+
+class ConcreteDecoratorA {
+Component wrappedObj
+methodA()
+methodB()
+newBehavior() //新方法
+}
+ConcreteDecoratorA --up|> Decorator
+
+class ConcreteDecoratorB {
+Component wrappedObj
+Object newState //新变量
+methodA()
+methodB()
+}
+ConcreteDecoratorB --up|> Decorator
+@enduml

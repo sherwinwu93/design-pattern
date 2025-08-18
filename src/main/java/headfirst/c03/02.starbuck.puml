@@ -1,0 +1,41 @@
+@startuml
+' 饮料
+abstract class Beverage {
+String description
+boolean milk
+boolean soy
+boolean mocha
+boolean whip
+getDescription()
+abstract cost()
+
+hasMilk();
+setMilk();
+hasSoy();
+setSoy();
+hasMocha();
+setMocha();
+hasWhip();
+setWhip();
+}
+
+class HouseBlend {
+cost() { // mycost + super.cost()}
+}
+HouseBlend --up|> Beverage
+
+class DarkRoast {
+cost() { // mycost + super.cost()}
+}
+DarkRoast --up|> Beverage
+
+class Decaf {
+cost() { // mycost + super.cost()}
+}
+Decaf --up|> Beverage
+
+class Espresso {
+cost() { // mycost + super.cost()}
+}
+Espresso --up|> Beverage
+@enduml
