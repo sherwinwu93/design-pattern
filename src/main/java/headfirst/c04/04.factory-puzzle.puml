@@ -1,0 +1,25 @@
+@startuml
+abstract class PizzaStore {
+createPizza()
+orderPizza(){}
+}
+
+class NYPizzaStore {
+createPizza()
+}
+NYPizzaStore --up|> PizzaStore
+NYPizzaStore --down> NYStyleCheesePizza
+NYPizzaStore --down> NYStylePepperoniPizza
+NYPizzaStore --down> NYStyleClamPizza
+NYPizzaStore --down> NYStyleVeggiePizza
+
+class ChicagoPizzaStore {
+createPizza()
+}
+ChicagoPizzaStore --up|> PizzaStore
+ChicagoPizzaStore --down> ChicagoStyleCheesePizza
+ChicagoPizzaStore --down> ChicagoStylePepperoniPizza
+ChicagoPizzaStore --down> ChicagoStyleClamPizza
+ChicagoPizzaStore --down> ChicagoStyleVeggiePizza
+
+@enduml

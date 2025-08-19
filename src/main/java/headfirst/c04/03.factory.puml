@@ -1,0 +1,31 @@
+@startuml
+
+'由子类实现工厂方法
+abstract class PizzaStore {
+' 工厂方法
+createPizza()
+orderPizza()
+}
+
+class NYPizzaStore {
+createPizza()
+}
+NYPizzaStore --up|> PizzaStore
+class ChicagoPizzaStore {
+createPizza()
+}
+ChicagoPizzaStore --up|> PizzaStore
+
+class Pizza {
+}
+
+NYStyleCheesePizza --up|> Pizza
+NYStylePepperoniPizza --up|> Pizza
+NYStyleClamPizza --up|> Pizza
+NYStyleVeggiePizza --up|> Pizza
+
+ChicagoStyleCheesePizza --up|> Pizza
+ChicagoStylePepperoniPizza --up|> Pizza
+ChicagoStyleClamPizza --up|> Pizza
+ChicagoStyleVeggiePizza --up|> Pizza
+@enduml
