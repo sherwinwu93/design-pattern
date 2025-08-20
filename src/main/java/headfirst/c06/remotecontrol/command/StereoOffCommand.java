@@ -7,25 +7,21 @@ import headfirst.c06.remotecontrol.device.Stereo;
  * @date 2025/8/20
  * @description
  */
-public class StereoOnWithCDCommand implements Command {
+public class StereoOffCommand implements Command {
     Stereo stereo;
-    public StereoOnWithCDCommand(Stereo stereo) {
+
+    public StereoOffCommand(Stereo stereo) {
         this.stereo = stereo;
     }
-
     @Override
     public void execute() {
-        stereo.on();
-        stereo.setCD("Jay Chou");
-        stereo.setVolume(11);
+        stereo.off();
         stereo.state();
     }
 
     @Override
     public void undo() {
-        stereo.off();
-        stereo.setCD("");
-        stereo.setVolume(0);
+        stereo.on();
         stereo.state();
     }
 }

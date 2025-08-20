@@ -11,9 +11,18 @@ public class Stereo {
     String dvd;
     String radio;
     int volume;
+    String location;
+    public Stereo() {
+
+    }
+    public Stereo(String location) {
+        this.location = location;
+    }
     public void on() {
+        on = true;
     }
     public void off() {
+        on = false;
     }
     public void setCD(String cd) {
         this.cd = cd;
@@ -26,5 +35,14 @@ public class Stereo {
     }
     public void setVolume(int volume) {
         this.volume = volume;
+    }
+
+    public void state() {
+        if (on) {
+            System.out.print(location + " Stereo is on:");
+            System.out.println(cd + " " + dvd + " " + radio);
+        } else {
+            System.out.println(location + " Stereo is off");
+        }
     }
 }
