@@ -1,0 +1,75 @@
+@startuml
+class ApplianceControl {
+on()
+off()
+}
+class Stereo {
+on()
+off()
+setCd()
+setDvd()
+setRadio()
+setVolume()
+}
+class TV {
+on()
+off()
+setInputChannel()
+setVolume()
+}
+class FaucetControl {
+openValue()
+closeValue()
+}
+class Hottub {
+circulate()
+jetsOn()
+jetsOff()
+setTemperature()
+}
+class Thermostat {
+setTemperature()
+}
+class SecurityControl {
+arm()
+disarm()
+}
+class GarageDoor {
+up()
+down()
+stop()
+lightOn()
+lightOff()
+}
+class Light {
+on()
+off()
+}
+class CeilingFan {
+high()
+medium()
+low()
+off()
+getSpeed()
+}
+class CeilingLight {
+on()
+off()
+dim()
+}
+class Sprinkler {
+waterOn()
+waterOff()
+}
+class OutdoorLight {
+on()
+off()
+}
+class GardenLight {
+setDuskTime()
+setDawnTime()
+manualOn()
+manualOff()
+}
+
+@enduml
