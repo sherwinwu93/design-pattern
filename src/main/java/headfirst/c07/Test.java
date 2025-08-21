@@ -1,5 +1,7 @@
 package headfirst.c07;
 
+import java.util.Stack;
+
 /**
  * @author Wusd
  * @date 2025/8/21

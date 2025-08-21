@@ -1,0 +1,20 @@
+@startuml
+interface Iterator {
+    hasNext()
+    next()
+    remove()
+}
+
+class EnumerationIterator {
+    hasNext()
+    next()
+    remove()
+}
+EnumerationIterator ..up|>Iterator
+
+interface Enumeration {
+hasMoreElements()
+nextElement()
+}
+EnumerationIterator --right> Enumeration
+@enduml
