@@ -1,0 +1,19 @@
+@startuml
+class CaffeineBeverage {
+prepareRecipe()
+boilWater()
+pourInCup()
+}
+class Coffee {
+prepareRecipe()
+brewCoffeeGrinds()
+addSugarAndMilk()
+}
+Coffee --up|> CaffeineBeverage
+class Tea {
+prepareRecipe()
+steepTeaBag()
+addLemon()
+}
+Tea --up|> CaffeineBeverage
+@enduml

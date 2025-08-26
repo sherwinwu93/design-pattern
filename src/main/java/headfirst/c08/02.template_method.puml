@@ -1,0 +1,15 @@
+@startuml
+abstract class AbstractClass {
+templateMethod() {primitiveOperation1();primitiveOperation2();concreteOperation();hook();}
+primitiveOperation1()
+primitiveOperation2()
+concreteOperation()
+hook()
+}
+
+class ConcreteClass {
+primitiveOperation1(){}
+primitiveOperation2(){}
+}
+ConcreteClass --up|> AbstractClass
+@enduml
