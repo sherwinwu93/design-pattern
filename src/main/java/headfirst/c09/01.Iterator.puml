@@ -1,0 +1,10 @@
+@startuml
+interface Iterator {
+    hasNext() // 是否有更多元素
+    next() // 返回这个聚合的下一个元素
+}
+class DinerMenuIterator {
+    hasNext()
+    next()
+}
+@enduml
