@@ -3,7 +3,7 @@ package headfirst.c09.iteratorultimate;
 import java.util.Iterator;
 
 public interface Menu {
+    public Iterator createIterator();
 
-    Iterator<MenuItem> createIterator();
-
+    // addItem还是让菜单类来完成
 }

@@ -1,36 +1,29 @@
 package headfirst.c09.iterator;
 
-
-/**
- * @author Wusd
- * @date 2025/8/27
- * @description
- */
 public class Waitress {
+    // 仍然和具体的菜单绑定
     PancakeHouseMenu pancakeHouseMenu;
     DinerMenu dinerMenu;
-    CafeMenu cafeMenu;
-    public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu, CafeMenu cafeMenu) {
+
+    public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinerMenu = dinerMenu;
-        this.cafeMenu = cafeMenu;
     }
+
+    // 打印出菜单的每一项
     public void printMenu() {
-        Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
-        Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
-        Iterator<MenuItem> cafeIterator = cafeMenu.createIterator();
-        System.out.println("MENU\n----\nBREAKFAST");
-        printMenu(pancakeIterator);
+        Iterator breakfastIterator = pancakeHouseMenu.createIterator();
+        Iterator lunchIterator = dinerMenu.createIterator();
+        System.out.println("Menu\n----\nBREAKFAST");
+        printMenu(breakfastIterator);
         System.out.println("\nLUNCH");
-        printMenu(dinerIterator);
-        System.out.println("\nCafe");
-        printMenu(cafeIterator);
+        printMenu(lunchIterator);
     }
-    private void printMenu(Iterator<MenuItem> iterator) {
+    public void printMenu(Iterator iterator) {
         while (iterator.hasNext()) {
-            MenuItem menuItem = iterator.next();
-            System.out.print(menuItem.getName() + ", ");
-            System.out.print(menuItem.getPrice() + " -- ");
+            MenuItem menuItem =(MenuItem) iterator.next();
+            System.out.print(menuItem.getName() + " ");
+            System.out.println(menuItem.getPrice() + " ");
             System.out.println(menuItem.getDescription());
         }
     }

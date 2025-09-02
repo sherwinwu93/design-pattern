@@ -1,41 +1,39 @@
 package headfirst.c09.old;
 
-import java.util.ArrayList;
+import java.util.List;
 
-/**
- * @author Wusd
- * @date 2025/8/27
- * @description
- */
-public class Waitress {
-    String name = "Alice";
+public class Alice {
+    // 打印出菜单的每一项
     public void printMenu() {
         PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-        ArrayList breakfastMenu = pancakeHouseMenu.getMenuItems();
+        List<MenuItem> breakfastItems = pancakeHouseMenu.getMenuItems();
 
         DinerMenu dinerMenu = new DinerMenu();
-        MenuItem[] lunchMenu = dinerMenu.getMenuItems();
+        MenuItem[] lunchItems = dinerMenu.getMenuItems();
 
-        for (int i = 0; i < breakfastMenu.size(); i++) {
-            MenuItem menuItem = (MenuItem)breakfastMenu.get(i);
+        for (int i = 0; i < breakfastItems.size(); i++) {
+            MenuItem menuItem = breakfastItems.get(i);
             System.out.print(menuItem.getName() + " ");
             System.out.println(menuItem.getPrice() + " ");
             System.out.println(menuItem.getDescription());
         }
-        for (int i = 0; i < lunchMenu.length; i++) {
-            MenuItem menuItem = lunchMenu[i];
+        for (int i = 0; i < lunchItems.length; i++) {
+            MenuItem menuItem = lunchItems[i];
             System.out.print(menuItem.getName() + " ");
             System.out.println(menuItem.getPrice() + " ");
             System.out.println(menuItem.getDescription());
         }
     }
+
     public void printBreakfastMenu() {
     }
-    public void printLunchMenu() {
 
+    public void printLunchMenu() {
     }
+
     public void printVegetarianMenu() {
     }
+
     public boolean isItemVegetarian(String name) {
         return false;
     }

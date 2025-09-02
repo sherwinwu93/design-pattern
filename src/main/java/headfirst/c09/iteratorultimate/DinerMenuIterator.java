@@ -4,31 +4,33 @@ import java.util.Iterator;
 
 /**
  * @author Wusd
- * @date 2025/8/27
+ * @date 2025/9/2
  * @description
  */
-public class DinerMenuIterator implements Iterator<MenuItem> {
+public class DinerMenuIterator implements Iterator {
     MenuItem[] items;
     int position = 0;
+
     public DinerMenuIterator(MenuItem[] items) {
         this.items = items;
     }
-    public MenuItem next() {
+
+    @Override
+    public boolean hasNext() {
+        if (position >= items.length || items[position] == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    @Override
+    public Object next() {
         return items[position++];
     }
-    public boolean hasNext() {
-        return position < items.length && items[position] != null;
-    }
+
+    @Override
     public void remove() {
-        if (position <= 0) {
-            throw new IllegalStateException
-                ("You can't remove an item until you've done at least one next()");
-        }
-        if (items[position-1] != null) {
-            for (int i = position-1; i < (items.length-1); i++) {
-                items[i] = items[i+1];
-            }
-            items[items.length-1] = null;
-        }
+        throw new UnsupportedOperationException();
     }
 }

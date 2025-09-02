@@ -1,0 +1,25 @@
+@startuml
+class Game {
+login()
+signup()
+move()
+fire()
+rest()
+getHighScore()
+getName()
+}
+
+class GameSession {
+login()
+signup()
+}
+class PlayerAction {
+move()
+fire()
+rest()
+}
+class Player {
+getHighScore()
+getName()
+}
+@enduml

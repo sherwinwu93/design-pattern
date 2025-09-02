@@ -1,0 +1,42 @@
+@startuml
+interface Iterator {
+hasNext()
+next()
+remove()
+}
+'class PancakeHouseMenuIterator {
+'hasNext()
+'next()
+'remove()
+'}
+'PancakeHouseMenuIterator ..up|> Iterator
+class DinerMenuIterator {
+hasNext()
+next()
+remove()
+}
+DinerMenuIterator ..up|> Iterator
+
+interface Menu {
+createIterator()
+}
+
+class PancakeHouseMenu {
+menuItems
+createIterator()
+}
+PancakeHouseMenu ..up|> Menu
+PancakeHouseMenu --right> PancakeHouseMenuIterator
+
+class DinerMenu {
+menuItems
+createIterator()
+}
+DinerMenu ..up|> Menu
+DinerMenu --right> DinerMenuIterator
+
+class Waitress {
+printMenu()
+}
+Waitress --right> Iterator
+@enduml

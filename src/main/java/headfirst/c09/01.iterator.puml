@@ -1,0 +1,27 @@
+@startuml
+Client --left> Aggregate
+Client --right> Iterator
+
+interface Aggregate {
+createIterator()
+}
+
+class ConcreteAggregate {
+createIterator()
+}
+ConcreteAggregate ..up|> Aggregate
+ConcreteAggregate --right> ConcreteIterator
+
+interface Iterator {
+hasNext()
+next()
+remove()
+}
+class ConcreteIterator {
+hasNext()
+next()
+remove()
+}
+ConcreteIterator ..up|> Iterator
+
+@enduml

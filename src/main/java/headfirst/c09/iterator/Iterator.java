@@ -1,11 +1,6 @@
 package headfirst.c09.iterator;
 
-/**
- * @author Wusd
- * @date 2025/8/27
- * @description
- */
-public interface Iterator<E> {
+public interface Iterator {
     boolean hasNext();
-    E next();
+    Object next();
 }

@@ -1,23 +1,17 @@
 package headfirst.c09.iteratorultimate;
 
-import java.util.ArrayList;
-
 /**
  * @author Wusd
- * @date 2025/8/27
+ * @date 2025/9/2
  * @description
  */
-public class MenuTestDrive {
+public class MenuTestDriver {
     public static void main(String[] args) {
-        ArrayList< Menu> menus = new ArrayList<>();
         PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-        menus.add(pancakeHouseMenu);
         DinerMenu dinerMenu = new DinerMenu();
-        menus.add(dinerMenu);
         CafeMenu cafeMenu = new CafeMenu();
-        menus.add(cafeMenu);
 
-        Waitress waitress = new Waitress(menus);
+        Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu, cafeMenu);
         waitress.printMenu();
     }
 }

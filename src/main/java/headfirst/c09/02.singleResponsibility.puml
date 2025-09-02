@@ -1,0 +1,54 @@
+@startuml
+' 无
+class Game {
+login()
+signup()
+move()
+fire()
+rest()
+}
+' 无
+class Person {
+setName()
+setAddress()
+setPhoneNumber()
+save()
+load()
+}
+' 有 flash
+class Phone {
+dial()
+hangUp()
+talk()
+sendData()
+flash()
+}
+' count
+class GumballMachine{
+getCount()
+getState()
+getLocation()
+}
+' 无
+class DeckOfCards{
+hasNext()
+next()
+remove()
+addCard()
+removeCard()
+shuffle()
+}
+' saveForLater
+class ShoppingCart {
+add()
+remove()
+checkOut()
+saveForLater()
+}
+' 无
+class Iterator {
+hasNext()
+next()
+remove()
+}
+@enduml

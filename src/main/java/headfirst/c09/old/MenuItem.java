@@ -2,8 +2,8 @@ package headfirst.c09.old;
 
 /**
  * @author Wusd
- * @date 2025/8/27
- * @description
+ * @date 2025/8/29
+ * @description 菜单类,都有名称、描述~是否素食和价格
  */
 public class MenuItem {
     String name;

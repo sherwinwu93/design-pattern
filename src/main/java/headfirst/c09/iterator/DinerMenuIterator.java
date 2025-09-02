@@ -2,19 +2,28 @@ package headfirst.c09.iterator;
 
 /**
  * @author Wusd
- * @date 2025/8/27
+ * @date 2025/9/2
  * @description
  */
-public class DinerMenuIterator implements Iterator<MenuItem> {
+public class DinerMenuIterator implements Iterator {
     MenuItem[] items;
     int position = 0;
+
     public DinerMenuIterator(MenuItem[] items) {
         this.items = items;
     }
-    public MenuItem next() {
-        return items[position++];
-    }
+
+    @Override
     public boolean hasNext() {
-        return position < items.length && items[position] != null;
+        if (position >= items.length || items[position] == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    @Override
+    public Object next() {
+        return items[position++];
     }
 }
