@@ -1,0 +1,37 @@
+@startuml
+Waitress --right> MenuComponent
+
+abstract class MenuComponent {
+getName()
+getDescription()
+getPrice()
+isVegetarian()
+print()
+
+add(component)
+remove(component)
+getChild(i)
+}
+
+class MenuItem {
+getName()
+getDescription()
+getPrice()
+isVegetarian()
+print()
+}
+MenuItem --up|> MenuComponent
+
+class Menu {
+menuComponents
+getName()
+getDescription()
+print()
+
+add(component)
+remove(component)
+getChild(i)
+}
+Menu --up|> MenuComponent
+Menu --up> MenuComponent
+@enduml

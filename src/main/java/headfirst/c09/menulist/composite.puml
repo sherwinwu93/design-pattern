@@ -1,0 +1,24 @@
+@startuml
+Client --right> Component
+
+class Component {
+operation()
+add(component)
+remove(component)
+getChild(i)
+}
+
+class Leaf {
+operation()
+}
+Leaf --up|> Component
+
+class Composite {
+operation()
+add(component)
+remove(component)
+getChild(i)
+}
+Composite --up|> Component
+Composite --up> Component
+@enduml
