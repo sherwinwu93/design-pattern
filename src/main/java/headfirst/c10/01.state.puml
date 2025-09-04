@@ -1,0 +1,38 @@
+@startuml
+interface State {
+insertQuarter()
+ejectQuarter()
+turnCrank()
+dispense()
+}
+class SoldState {
+insertQuarter()
+ejectQuarter()
+turnCrank()
+dispense()
+}
+class SoldOutState {
+insertQuarter()
+ejectQuarter()
+turnCrank()
+dispense()
+}
+class NoQuarterState {
+insertQuarter()
+ejectQuarter()
+turnCrank()
+dispense()
+}
+class HasQuarterState {
+insertQuarter()
+ejectQuarter()
+turnCrank()
+dispense()
+}
+class WinnerState {
+insertQuarter()
+ejectQuarter()
+turnCrank()
+dispense()
+}
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class Context {
+request() {state.handle()}
+}
+class State {
+handle()
+}
+Context --right> State
+class ConcreteStateA {
+handle()
+}
+ConcreteStateA --up|> State
+class ConcreteStateB {
+handle()
+}
+ConcreteStateB --up|> State
+@enduml
