@@ -1,0 +1,26 @@
+@startuml
+interface Subject{
+request()
+}
+class RealSubject{
+request()
+}
+RealSubject ..up|> Subject
+'运行时java创建的代理对象,完全实现了Subject接口
+class Proxy {
+request()
+}
+Proxy ..up|> Subject
+Proxy --right> InvocationHandlerImpl
+
+interface InvocationHandler {
+invoke()
+}
+' 对Proxy方法的调用都会通过InvocationHandlerImpl, InvocationHandlerImpl控制对RealSubject的访问
+class InvocationHandlerImpl {
+invoke()
+}
+InvocationHandlerImpl ..up|> InvocationHandler
+InvocationHandlerImpl --left> RealSubject
+
+@enduml
